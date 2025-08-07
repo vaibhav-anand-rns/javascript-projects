@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Web Development Insights</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .blog-header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-grey-5) 100%);
+        }
+        
+        .blog-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-secondary);
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            color: var(--color-grey-2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: var(--color-grey-5);
+            border: none;
+            color: var(--color-white);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--color-secondary);
+        }
+        
+        .blog-search {
+            max-width: 400px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .blog-search input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: var(--color-grey-5);
+            border: none;
+            border-radius: 25px;
+            color: var(--color-white);
+            font-size: 1rem;
+        }
+        
+        .blog-search i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-grey-3);
+        }
+        
+        .blog-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--color-grey-5);
+            border-radius: 10px;
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+        
+        .stat-label {
+            color: var(--color-grey-2);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="main-content">
+    <div class="container active" id="home">
+        <div class="blog-header">
+            <h1>Web Development Blog</h1>
+            <p>Insights, tutorials, and tips for modern web development</p>
+        </div>
+        
+        <div class="blog-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search articles..." id="searchInput">
+        </div>
+        
+        <div class="blog-filters">
+            <button class="filter-btn active" data-category="all">All Posts</button>
+            <button class="filter-btn" data-category="web-development">Web Development</button>
+            <button class="filter-btn" data-category="design">Design</button>
+            <button class="filter-btn" data-category="learning">Learning</button>
+            <button class="filter-btn" data-category="technology">Technology</button>
+        </div>
+        
+        <div class="blog-stats">
+            <div class="stat-item">
+                <div class="stat-number">24</div>
+                <div class="stat-label">Articles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12.5K</div>
+                <div class="stat-label">Readers</div>
+            </div>
+        </div>
+        
+        <div class="blogs">
+            <div class="blog" data-category="web-development">
+                <img src="portfoli4.jpg" alt="Web Development Guide">
+                <div class="blog-text">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 15, 2024</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> Web Development</span>
+                    </div>
+                    <h4>How to Create Your Own Website</h4>
+                    <p>
+                        Learn the step-by-step process of creating a professional website from scratch. This comprehensive guide covers everything from planning and design to deployment and maintenance.
+                    </p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="fas fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog" data-category="design">
+                <img src="portfoli1.jpg" alt="Web Design Expert">
+                <div class="blog-text">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 10, 2024</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> Design</span>
+                    </div>
+                    <h4>How to Become an Expert in Web Design</h4>
+                    <p>
+                        Master the art of web design with comprehensive techniques, modern tools, and industry best practices. Learn responsive design, user experience principles, and advanced CSS/JavaScript skills.
+                    </p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="fas fa-clock"></i> 8 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog" data-category="learning">
+                <img src="portfoli2.jpg" alt="Web Development Learning Path">
+                <div class="blog-text">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 5, 2024</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> Learning</span>
+                    </div>
+                    <h4>Complete Web Development Learning Path</h4>
+                    <p>
+                        A comprehensive roadmap for aspiring web developers. From HTML/CSS basics to advanced frameworks, this guide will help you build a solid foundation in web development.
+                    </p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="fas fa-clock"></i> 12 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog" data-category="technology">
+                <img src="portfoli6.png.jpg" alt="Debugging Tools">
+                <div class="blog-text">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> February 28, 2024</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> Technology</span>
+                    </div>
+                    <h4>Debugging Made Easy with Web Inspector</h4>
+                    <p>
+                        Learn how to use browser developer tools effectively to debug your web applications. Master the art of troubleshooting with practical examples and real-world scenarios.
+                    </p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="fas fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog" data-category="design">
+                <img src="portfoli3.jpg" alt="UI/UX Design">
+                <div class="blog-text">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> February 20, 2024</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> Design</span>
+                    </div>
+                    <h4>Get Started with Web Design and UI Design</h4>
+                    <p>
+                        Essential principles and techniques for creating beautiful and functional user interfaces. Learn about color theory, typography, and user experience design.
+                    </p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="fas fa-clock"></i> 7 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog" data-category="technology">
+                <img src="portfoli5.jpeg.jpg" alt="Modern Web Development">
+                <div class="blog-text">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> February 15, 2024</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> Technology</span>
+                    </div>
+                    <h4>Modern Web Development Trends</h4>
+                    <p>
+                        Explore the latest trends in web development including Progressive Web Apps, serverless architecture, and modern JavaScript frameworks that are shaping the future of the web.
+                    </p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="fas fa-clock"></i> 10 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <div class="control active-btn" data-id="home">
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="control" data-id="about">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="control" data-id="portfolio">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="control" data-id="blogs">
+            <i class="far fa-newspaper"></i>
+        </div>
+        <div class="control" data-id="contact">
+            <i class="fas fa-envelope-open"></i>
+        </div>
+    </div>
+    
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+    
+    <script>
+        (function () {
+            console.log("Blog JavaScript loaded successfully");
+            
+            // Get all control buttons
+            const controls = document.querySelectorAll(".control");
+            const sections = document.querySelectorAll(".container");
+            
+            console.log("Found controls:", controls.length);
+            console.log("Found sections:", sections.length);
+            
+            // Add click event listeners to all control buttons
+            controls.forEach((button, index) => {
+                console.log(`Control ${index}:`, button.getAttribute("data-id"));
+                
+                button.addEventListener("click", function() {
+                    console.log("Control clicked:", this.getAttribute("data-id"));
+                    
+                    // Remove active class from all buttons
+                    controls.forEach(btn => btn.classList.remove("active-btn"));
+                    
+                    // Add active class to clicked button
+                    this.classList.add("active-btn");
+                    
+                    // Remove active class from all sections
+                    sections.forEach(section => section.classList.remove("active"));
+                    
+                    // Add active class to corresponding section
+                    const targetId = this.getAttribute("data-id");
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.classList.add("active");
+                        console.log("Activated section:", targetId);
+                    } else {
+                        console.error(`Section with id "${targetId}" not found`);
+                    }
+                });
+            });
+            
+            // Blog filtering functionality
+            const filterBtns = document.querySelectorAll(".filter-btn");
+            const blogItems = document.querySelectorAll(".blog");
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener("click", function() {
+                    // Remove active class from all filter buttons
+                    filterBtns.forEach(b => b.classList.remove("active"));
+                    
+                    // Add active class to clicked button
+                    this.classList.add("active");
+                    
+                    const category = this.getAttribute("data-category");
+                    
+                    blogItems.forEach(item => {
+                        if (category === "all" || item.getAttribute("data-category") === category) {
+                            item.style.display = "block";
+                            item.style.animation = "fadeIn 0.5s ease-in-out";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById("searchInput");
+            
+            searchInput.addEventListener("input", function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                blogItems.forEach(item => {
+                    const title = item.querySelector("h4").textContent.toLowerCase();
+                    const content = item.querySelector("p").textContent.toLowerCase();
+                    const category = item.querySelector(".blog-category").textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || content.includes(searchTerm) || category.includes(searchTerm)) {
+                        item.style.display = "block";
+                        item.style.animation = "fadeIn 0.5s ease-in-out";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+            
+            // Theme toggle functionality
+            const themeBtn = document.querySelector(".theme-btn");
+            if (themeBtn) {
+                themeBtn.addEventListener("click", () => {
+                    document.body.classList.toggle("light-mode");
+                    console.log("Theme toggled");
+                });
+            } else {
+                console.error("Theme button not found");
+            }
+            
+            // Initialize the first tab as active (if not already set)
+            const activeBtn = document.querySelector(".control.active-btn");
+            if (!activeBtn && controls.length > 0) {
+                controls[0].classList.add("active-btn");
+                const firstSectionId = controls[0].getAttribute("data-id");
+                const firstSection = document.getElementById(firstSectionId);
+                if (firstSection) {
+                    firstSection.classList.add("active");
+                    console.log("Initialized first tab:", firstSectionId);
+                }
+            }
+            
+            console.log("Blog JavaScript initialization complete");
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html> 
